@@ -7,20 +7,20 @@
     <title>Ola's blog</title>
 </head>
 <body>
-	<header>
-		<h1><a href="/">Django Girls Blog</a></h1>
-	</header>
-
-	<article>
-		<time>published: 14.06,2014, 12:14</time>
-		<h2>My first post</h2>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corporis quos quasi laudantium? Dolore enim qui dolor a labore deleniti neque! Aliquam cum vitae temporibus laborum mollitia magnam, quo rerum!</p>
-	</article>
-
-	<article>
-		<time>published: 14.06,2014, 12:14</time>
-		<h2>My SECOND post</h2>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corporis quos quasi laudantium? Dolore enim qui dolor a labore deleniti neque! Aliquam cum vitae temporibus laborum mollitia magnam, quo rerum!</p>
-	</article>
+  <header>
+  <h1><a href="/">Django Girls Blog</a></h1>
+  </header>
+  
+  {% for post in posts %}
+  	
+    
+    <article>
+      
+      <time>published: {{ post.published_date }}</time>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+    {% endfor %}
+    
 </body>
 </html>
